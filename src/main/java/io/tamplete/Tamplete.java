@@ -12,7 +12,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Created by jgaucher on 11/03/2014.
+ * Engine
  */
 public class Tamplete {
 
@@ -20,11 +20,13 @@ public class Tamplete {
 
     Map<String, CompiledScript> compiledScrips = new HashMap<String, CompiledScript>();
 
+    Transformer transformer = new Transformer();
+
     static public void main(String[] args) throws Exception {
         Tamplete plop = new Tamplete();
 
-        System.out.println(plop.run("script", false));
-        System.out.println(plop.run("script", true));
+        System.out.println(plop.run("template/donothing.tmpl", false));
+        //System.out.println(plop.run("script.js", true));
 
     }
 
@@ -87,7 +89,7 @@ public class Tamplete {
 
     private InputStreamReader getTemplate(String name) {
 
-        final InputStream inputStream = Thread.currentThread().getContextClassLoader().getResourceAsStream(name + ".js");
+        final InputStream inputStream = Thread.currentThread().getContextClassLoader().getResourceAsStream(name);
         final InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
         return inputStreamReader;
     }
