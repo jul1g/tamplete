@@ -14,14 +14,14 @@ import java.util.Map;
 /**
  * Created by jgaucher on 11/03/2014.
  */
-public class Script {
+public class Tamplete {
 
-    private final Logger logger = LoggerFactory.getLogger(Script.class);
+    private final Logger logger = LoggerFactory.getLogger(Tamplete.class);
 
     Map<String, CompiledScript> compiledScrips = new HashMap<String, CompiledScript>();
 
     static public void main(String[] args) throws Exception {
-        Script plop = new Script();
+        Tamplete plop = new Tamplete();
 
         System.out.println(plop.run("script", false));
         System.out.println(plop.run("script", true));
